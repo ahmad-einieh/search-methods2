@@ -6,9 +6,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 import Astar
 import Greedy
 
-
-# import Distance
-
 class Ui_root(object):
     def setupUi(self, root):
         root.setObjectName("root")
