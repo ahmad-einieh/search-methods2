@@ -6,6 +6,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 import Astar
 import Greedy
 
+
 class Ui_root(object):
     def setupUi(self, root):
         root.setObjectName("root")
@@ -530,7 +531,7 @@ class Ui_root(object):
         nameOfGraph = "greedy.html"
         pyvis_graph = pyvis.network.Network(notebook=True, height="100%", width="100%")
         a, b, c, d = Greedy.Greedy(citiesGraph.dict_graph, self.city1.currentText(), self.city2.currentText())
-        ttt = (b / int(self.KMforL.toPlainText())) * 2.18
+        ttt = (b / float(self.KMforL.toPlainText())) * 2.18
 
         for i in citiesGraph.dict_graph:
             color = 'blue'
@@ -565,7 +566,7 @@ class Ui_root(object):
         pyvis_graph = pyvis.network.Network(notebook=True, height="100%", width="100%")
 
         a, b, c, d = Astar.astar(citiesGraph.dict_graph, self.city1.currentText(), self.city2.currentText())
-        ttt = (b / int(self.KMforL.toPlainText())) * 2.18
+        ttt = (b / float(self.KMforL.toPlainText())) * 2.18
         for i in citiesGraph.dict_graph:
             color = 'blue'
             for k in a:
