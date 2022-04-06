@@ -531,7 +531,13 @@ class Ui_root(object):
         nameOfGraph = "greedy.html"
         pyvis_graph = pyvis.network.Network(notebook=True, height="100%", width="100%")
         a, b, c, d = Greedy.Greedy(citiesGraph.dict_graph, self.city1.currentText(), self.city2.currentText())
-        ttt = (b / float(self.KMforL.toPlainText())) * 2.18
+
+        KmOnL = self.KMforL.toPlainText()
+
+        if (KmOnL == ""):
+            KmOnL = 1
+
+        ttt = (b / float(KmOnL)) * 2.18
 
         for i in citiesGraph.dict_graph:
             color = 'blue'
@@ -566,7 +572,11 @@ class Ui_root(object):
         pyvis_graph = pyvis.network.Network(notebook=True, height="100%", width="100%")
 
         a, b, c, d = Astar.astar(citiesGraph.dict_graph, self.city1.currentText(), self.city2.currentText())
-        ttt = (b / float(self.KMforL.toPlainText())) * 2.18
+        KmOnL = self.KMforL.toPlainText()
+
+        if (KmOnL == ""):
+            KmOnL = 1
+        ttt = (b / float(KmOnL)) * 2.18
         for i in citiesGraph.dict_graph:
             color = 'blue'
             for k in a:
